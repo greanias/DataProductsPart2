@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>State Data Sorter</title>
+  <meta charset="utf-8">
+  <meta name="description" content="State Data Sorter">
+  <meta name="author" content="Rob">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>State Data Sorter</h1>
+    <h2>Simple Visual Population Filtering</h2>
+    <p>Rob<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The State Data Sorter application has been designed to provide simple visibility and control over population data from standardized (i.e., CSV) files.  The current proof-of-concept allows the user to select filtering criteria and control the sorting parameter.  Based on initial feedback, further development will enhance its abilites for wider use.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Operation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This application eliminate the need for users to understand data filtering in R.  Using only the two radio buttons and slider, the user could perform the following example R task.</p>
+
+<pre><code class="r">info &lt;- read.csv(&quot;states.csv&quot;)
+filtered &lt;- subset(info, info$Population &gt;= 10000000, select = State:Population)
+sortedlist &lt;- filtered[with(filtered, order(State)),]
+print(sortedlist)
+</code></pre>
+
+<pre><code>##           State Population
+## 5    California   38332521
+## 9       Florida   19552860
+## 13     Illinois   12882135
+## 32     New York   19651127
+## 35         Ohio   11570808
+## 38 Pennsylvania   12773801
+## 43        Texas   26448193
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Target Audience</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The design goal of this application is simplicity, enabling a wide range of users easy control over population data.  Specific users identified for further evaluation, based on their interest in data but lack of general programming experience, include:</p>
+
+<ol>
+<li>School children</li>
+<li>Press/reporters</li>
+<li>Politicians</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Extensibility</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This proof of concept application is provided to validate interest.</p>
+
+<p>Future enhancements are scheduled to include:</p>
+
+<ul>
+<li>Map API integration</li>
+<li>Searching and sorting based on multiple criteria</li>
+<li>Greater regional reach (Global/Country down to County/City)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Summary'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Operation'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Target Audience'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Extensibility'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
